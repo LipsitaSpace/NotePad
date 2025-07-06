@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/title"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/description"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewTitle"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textViewTitle"
@@ -29,11 +32,12 @@
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="@string/date"
+        android:textSize="9sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintStart_toEndOf="@+id/textViewTitle"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toEndOf="@+id/textViewDescription"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -41,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time"
+        android:textSize="9sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewDate"
         app:layout_constraintStart_toStartOf="@+id/textViewDate"
         app:layout_constraintTop_toBottomOf="@+id/textViewDate" />

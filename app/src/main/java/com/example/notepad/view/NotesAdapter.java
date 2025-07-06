@@ -9,55 +9,49 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notepad.R;
-import com.example.notepad.model.Items;
+import com.example.notepad.model.Notes;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder>{
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
+    private List<Notes> noteList = new ArrayList<>();
 
-        private List<Items> noteList;
+    @NonNull
+    @Override
+    public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_notes, parent, false);
+        return new NotesViewHolder(view);
+    }
 
-        public NotesAdapter(List<Items> noteList) {
-            this.noteList= noteList;
+    @Override
+    public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
+        Notes notes = noteList.get(position);
+        holder.title.setText(notes.title);
+        holder.description.setText(notes.description);
+        holder.date.setText(notes.date);
+        holder.time.setText(notes.time);
+    }
+
+    @Override
+    public int getItemCount() {
+        return noteList.size();
+    }
+
+    public void setNotes(List<Notes> notes) {
+        this.noteList = notes;
+        notifyDataSetChanged();
+    }
+
+    static class NotesViewHolder extends RecyclerView.ViewHolder {
+        TextView title, description, date, time;
+
+        NotesViewHolder(@NonNull View itemView) {
+            super(itemView);
+            title = itemView.findViewById(R.id.textViewTitle);
+            description = itemView.findViewById(R.id.textViewDescription);
+            date = itemView.findViewById(R.id.textViewDate);
+            time = itemView.findViewById(R.id.textViewTime);
         }
-
-        public void setNoteList(List<Items> items) {
-            this.noteList = items;
-        }
-
-        @NonNull
-        @Override
-        public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_notes, parent, false);
-            return new NotesViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
-            holder.titelText.setText(noteList.get(position).getTitle());
-            holder.descriptionText.setText(noteList.get(position).getDescription());
-            holder.dateText.setText(noteList.get(position).getDate());
-            holder.timeText.setText(noteList.get(position).getTime());
-        }
-
-        @Override
-        public int getItemCount() {
-            return noteList == null ? 0 : noteList.size();
-        }
-
-        static class NotesViewHolder extends RecyclerView.ViewHolder {
-            TextView titelText;
-            TextView descriptionText;
-            TextView dateText;
-            TextView timeText;
-
-            NotesViewHolder(@NonNull View itemView) {
-                super(itemView);
-                titelText = itemView.findViewById(R.id.textViewTitle);
-                descriptionText = itemView.findViewById(R.id.textViewDescription);
-                dateText = itemView.findViewById(R.id.textViewDate);
-                timeText = itemView.findViewById(R.id.textViewTime);
-            }
-        }
+    }
 }
