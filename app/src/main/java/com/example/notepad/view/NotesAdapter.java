@@ -1,5 +1,7 @@
 package com.example.notepad.view;
 
+import static com.example.notepad.view.Helper.showMsg;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.description.setText(notes.description);
         holder.date.setText(notes.date);
         holder.time.setText(notes.time);
+
+        holder.itemView.setOnLongClickListener(v -> {
+            noteList.remove(position);
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, noteList.size());
+            showMsg("Note Deleted");
+            return true;
+        });
     }
 
     @Override
