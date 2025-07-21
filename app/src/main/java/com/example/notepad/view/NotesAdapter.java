@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notepad.R;
 import com.example.notepad.model.Notes;
+import com.example.notepad.viewmodel.NotesViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.time.setText(notes.time);
 
         holder.itemView.setOnLongClickListener(v -> {
+            NotesViewModel.delete(notes);
             noteList.remove(position);
             notifyItemRemoved(position);
             notifyItemRangeChanged(position, noteList.size());

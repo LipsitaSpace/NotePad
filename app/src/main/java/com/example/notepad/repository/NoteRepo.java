@@ -24,6 +24,10 @@ public class NoteRepo {
         new Thread(() -> noteDao.insert(note)).start();
     }
 
+    public static void delete(Notes notes) {
+        new Thread(() -> NoteDataBase.getInstance(null).noteDao().delete(notes)).start();
+    }
+
     public LiveData<List<Notes>> getAllNotes() {
         return allNotes;
     }

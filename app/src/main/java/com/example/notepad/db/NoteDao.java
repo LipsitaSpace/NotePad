@@ -2,6 +2,7 @@ package com.example.notepad.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -13,6 +14,9 @@ import java.util.List;
 public interface NoteDao {
     @Insert
     void insert(Notes note);
+
+    @Delete
+    void delete(Notes notes);
 
     @Query("SELECT * FROM notes ORDER BY id DESC")
     LiveData<List<Notes>> getAllNotes();
