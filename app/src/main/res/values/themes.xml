@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyCustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#FFDE00</item>
+        <item name="colorPrimaryVariant">#FFCE4E</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorAccent">#DAAF03</item>
+    </style>
 </resources>
