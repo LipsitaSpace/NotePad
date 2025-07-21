@@ -29,4 +29,7 @@ public class NotesViewModel extends AndroidViewModel {
         return allNotes;
     }
 
+    public static void delete(Notes notes) {
+        NoteRepo.delete(notes);
+    }
 }
