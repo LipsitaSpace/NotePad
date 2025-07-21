@@ -1,4 +1,4 @@
-package com.example.notepad.view
+package com.example.notepad.utils
 
 import android.os.Handler
 import android.os.Looper

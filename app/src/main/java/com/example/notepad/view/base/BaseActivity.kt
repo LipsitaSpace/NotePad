@@ -1,4 +1,4 @@
-package com.example.notepad.view
+package com.example.notepad.view.base
 
 import androidx.appcompat.app.AppCompatActivity
 

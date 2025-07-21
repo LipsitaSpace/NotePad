@@ -1,4 +1,4 @@
-package com.example.notepad.view;
+package com.example.notepad.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notepad.R;
-import com.example.notepad.model.Notes;
+import com.example.notepad.view.adapter.NotesAdapter;
 import com.example.notepad.viewmodel.NotesViewModel;
 
 public class MainActivity extends AppCompatActivity {

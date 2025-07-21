@@ -1,10 +1,6 @@
-package com.example.notepad.view
+package com.example.notepad.utils
 
-import android.R.attr.apiKey
 import android.content.Context
-import android.content.SharedPreferences
-import android.text.TextUtils
-import androidx.appcompat.app.AppCompatActivity
 
 object App {
     var application: Context? = null

@@ -1,11 +1,11 @@
-package com.example.notepad.repository;
+package com.example.notepad.data.repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.notepad.db.NoteDao;
-import com.example.notepad.db.NoteDataBase;
+import com.example.notepad.data.dp.NoteDao;
+import com.example.notepad.data.dp.NoteDataBase;
 import com.example.notepad.model.Notes;
 
 import java.util.List;

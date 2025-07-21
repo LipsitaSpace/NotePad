@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.notepad.model.Notes;
-import com.example.notepad.repository.NoteRepo;
+import com.example.notepad.data.repository.NoteRepo;
 
 import java.util.List;
 

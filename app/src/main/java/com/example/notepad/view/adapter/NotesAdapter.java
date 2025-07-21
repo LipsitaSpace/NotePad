@@ -1,17 +1,20 @@
-package com.example.notepad.view;
+package com.example.notepad.view.adapter;
 
-import static com.example.notepad.view.Helper.showMsg;
+import static com.example.notepad.utils.Helper.showMsg;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notepad.R;
 import com.example.notepad.model.Notes;
+import com.example.notepad.view.fragment.NoteCreateFragment;
 import com.example.notepad.viewmodel.NotesViewModel;
 
 import java.util.ArrayList;
@@ -51,6 +54,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         return noteList.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setNotes(List<Notes> notes) {
         this.noteList = notes;
         notifyDataSetChanged();

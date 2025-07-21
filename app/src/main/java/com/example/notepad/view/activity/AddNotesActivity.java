@@ -1,10 +1,12 @@
-package com.example.notepad.view;
+package com.example.notepad.view.activity;
 
 import android.os.Bundle;
 
 import com.example.notepad.R;
+import com.example.notepad.view.base.BaseActivity;
+import com.example.notepad.view.fragment.NoteCreateFragment;
 
-public class AddNotesActivity extends BaseActivity{
+public class AddNotesActivity extends BaseActivity {
     @Override
     public int getContainerId() {
         return R.id.fragment_container;

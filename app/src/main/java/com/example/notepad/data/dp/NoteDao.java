@@ -1,4 +1,4 @@
-package com.example.notepad.db;
+package com.example.notepad.data.dp;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
