@@ -20,7 +20,7 @@ import com.example.notepad.viewmodel.NotesViewModel;
 public class NoteCreateFragment extends Fragment {
 
     public EditText etTitle, etDescription;
-    public Button btnSubmit;
+    public Button btnSubmit, btnDiscard;
     public NotesViewModel notesViewModel;
 
 
@@ -29,7 +29,8 @@ public class NoteCreateFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.note_create_fragment, container, false);
         initViews(view);
-        btnSubmit.setOnClickListener(this::onClick);
+        btnSubmit.setOnClickListener(this::onSubmitClick);
+        btnDiscard.setOnClickListener(this::onDiscardClick);
         return view;
     }
 
@@ -37,6 +38,7 @@ public class NoteCreateFragment extends Fragment {
         etTitle = view.findViewById(R.id.et_title);
         etDescription = view.findViewById(R.id.et_description);
         btnSubmit = view.findViewById(R.id.btn_submit);
+        btnDiscard = view.findViewById(R.id.btn_discard);
     }
 
     @Override
@@ -47,13 +49,19 @@ public class NoteCreateFragment extends Fragment {
                 .get(NotesViewModel.class);
     }
 
-    public void onClick(View view) {
+    public void onSubmitClick(View view) {
         String title = etTitle.getText().toString().trim();
         String description = etDescription.getText().toString().trim();
 
         notesViewModel.insert(new Notes(title, description, "2025-07-05", "10:00 AM"));
         if (getActivity() != null) {
             Helper.showMsg("Note Added Successfully");
+            getActivity().finish();
+        }
+    }
+    public void onDiscardClick(View view) {
+        if (getActivity() != null) {
+            Helper.showMsg("Note Discarded");
             getActivity().finish();
         }
     }
